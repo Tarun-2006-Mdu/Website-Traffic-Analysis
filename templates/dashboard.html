@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Dashboard</title>
+    <style>
+        body { 
+            background: url('/static/dashboard image.webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0; }
+        .container { max-width: 900px; margin: auto; }
+        .cards { display: flex; justify-content: space-between; margin-bottom: 30px; }
+        .card {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 8px #bbb;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+        }
+        h2, h4, h5 { margin-bottom: 15px; }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #999;
+        }
+        p { font-size: 22px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center; margin-bottom: 40px;">🌐 Website Traffic Dashboard</h2>
+        <div class="cards">
+            <div class="card">
+                <h4>Total Events</h4>
+                <p>{{ total_events }}</p>
+            </div>
+            <div class="card">
+                <h4>Unique Visitors (City)</h4>
+                <p>{{ unique_cities }}</p>
+            </div>
+            <div class="card">
+                <h4>Top Artist</h4>
+                <p>{{ top_artist }}</p>
+            </div>
+        </div>
+
+        <h5>Events by Country</h5>
+        <img src="{{ country_img }}" alt="Traffic by Country" loading="lazy">
+
+        <h5 style="margin-top: 30px;">Daily Events</h5>
+        <img src="{{ events_img }}" alt="Daily Events" loading="lazy">
+    </div>
+</body>
+</html>
